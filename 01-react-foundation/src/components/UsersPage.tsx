@@ -1,41 +1,29 @@
 import axios from "axios";
 import { useEffect } from "react";
+import type { ReqResUserListResponse } from "../interfaces";
 
-export const UsersPage = () => {
-  useEffect(() => {
-    // To use axios; write 'npm i zustand' in the terminal
-
-    axios
-      .get("https://reqres.in/api/users?page=2", {
+const loadUsers = async () => {
+  try {
+    const { data } = await axios.get<ReqResUserListResponse>(
+      "https://reqres.in/api/users?page=2",
+      {
         headers: {
           // Check the Reqres documentation for the actual key and header name.
           "x-api-key": "reqres-free-v1",
           "Content-Type": "application/json",
         },
-      })
-      .then((resp) => console.log(resp.data))
-      .catch((error) =>
-        console.error("Axios Error:", error.response.status, error.message)
-      );
+      }
+    );
+    return data.data;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
 
-    //   fetch("https://reqres.in/api/users?page=2", {
-    //     method: "GET",
-    //     headers: {
-    //       // Check the Reqres documentation for the actual key and header name.
-    //       // 'reqres-free-v1' is a common placeholder/example value.
-    //       "x-api-key": "reqres-free-v1",
-    //       "Content-Type": "application/json", // Often good practice
-    //     },
-    //   })
-    //     .then((resp) => {
-    //       if (!resp.ok) {
-    //         // Throw an error for 4xx or 5xx status codes
-    //         throw new Error(`HTTP error! status: ${resp.status}`);
-    //       }
-    //       return resp.json();
-    //     })
-    //     .then((data) => console.log(data))
-    //     .catch((error) => console.error("Fetch Error:", error));
+export const UsersPage = () => {
+  useEffect(() => {
+    loadUsers().then((users) => console.log(users));
   }, []);
 
   return (
