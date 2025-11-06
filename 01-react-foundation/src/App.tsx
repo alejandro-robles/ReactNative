@@ -1,7 +1,8 @@
 import {
   // Counter,
   // CounterWithHook,
-  LoginPage,
+  // LoginPage,
+  UsersPage,
 } from "./components";
 // import {
 //   // BasicTypes,
@@ -18,7 +19,9 @@ function App() {
       {/* <BasicFunctions></BasicFunctions> */}
       {/* <Counter></Counter> */}
       {/* <CounterWithHook></CounterWithHook> */}
-      <LoginPage></LoginPage>
+      {/* <LoginPage></LoginPage> */}
+
+      <UsersPage></UsersPage>
     </main>
   );
 }
