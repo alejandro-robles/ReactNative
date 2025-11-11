@@ -16,21 +16,23 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'stretch',
   },
   box: {
     width: 100,
     height: 100,
   },
   box1: {
-    backgroundColor: 'red',
-    top: -100,
+    backgroundColor: 'green',
+    // top: -100,
   },
   box2: {
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
+    alignSelf: 'flex-end',
   },
   box3: {
-    backgroundColor: 'green',
-    top: 100,
+    backgroundColor: 'red',
+    alignSelf: 'center',
+    // top: 100,
   },
 });
