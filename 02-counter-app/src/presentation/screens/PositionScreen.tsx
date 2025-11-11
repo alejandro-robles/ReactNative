@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 export const PositionScreen = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.greenBox} />
       <View style={styles.purpleBox} />
       <View style={styles.orangeBox} />
     </View>
@@ -11,7 +12,7 @@ export const PositionScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     backgroundColor: 'blue',
     justifyContent: 'center',
     alignItems: 'center',
@@ -23,8 +24,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'purple',
     borderWidth: 10,
     borderColor: 'white',
-    position: 'relative',
-    top: 0,
+    position: 'absolute',
+    // top: 0,
+    bottom: 0,
+    left: 0,
   },
   orangeBox: {
     width: 100,
@@ -32,7 +35,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'orange',
     borderWidth: 10,
     borderColor: 'white',
-    position: 'relative',
+    position: 'absolute',
     top: 0,
+    right: 0,
+  },
+  greenBox: {
+    // width: 100,
+    // height: 100,
+    backgroundColor: 'green',
+    borderWidth: 10,
+    borderColor: 'white',
+    // position: 'absolute',
+    // bottom: 0,
+    // right: 0,
+    ...StyleSheet.absoluteFillObject,
   },
 });

@@ -1,5 +1,4 @@
 import { StyleSheet, View, Text, useWindowDimensions } from 'react-native';
-import { hairlineWidth } from 'react-native/types_generated/Libraries/StyleSheet/StyleSheetExports';
 
 // const { width, height } = Dimensions.get('window');
 
