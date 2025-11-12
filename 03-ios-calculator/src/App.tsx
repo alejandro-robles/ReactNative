@@ -1,19 +1,14 @@
-import { StatusBar, StyleSheet, View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { CalculatorScreen } from './presentation/screens/CalculatorScreen';
+import { styles } from './config/theme/app-theme';
 
 function App() {
   return (
-    <View>
+    <View style={styles.background}>
       <StatusBar barStyle={'light-content'} backgroundColor={'black'} />
       <CalculatorScreen />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
