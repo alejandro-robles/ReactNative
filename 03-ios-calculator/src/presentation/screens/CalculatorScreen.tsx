@@ -1,5 +1,6 @@
-import { View, Text, Pressable } from 'react-native';
-import { styles } from '../../config/theme/app-theme';
+import { View, Text } from 'react-native';
+import { colors, styles } from '../../config/theme/app-theme';
+import { CalculatorButtons } from '../components/CalculatorButtons';
 
 export const CalculatorScreen = () => {
   return (
@@ -10,9 +11,33 @@ export const CalculatorScreen = () => {
       </View>
 
       <View style={styles.row}>
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>1</Text>
-        </Pressable>
+        <CalculatorButtons label="C" blackText color={colors.lightGray} />
+        <CalculatorButtons label="+/-" blackText color={colors.lightGray} />
+        <CalculatorButtons label="del" blackText color={colors.lightGray} />
+        <CalculatorButtons label="/" color={colors.orange} />
+      </View>
+      <View style={styles.row}>
+        <CalculatorButtons label="7" />
+        <CalculatorButtons label="8" />
+        <CalculatorButtons label="9" />
+        <CalculatorButtons label="x" color={colors.orange} />
+      </View>
+      <View style={styles.row}>
+        <CalculatorButtons label="4" />
+        <CalculatorButtons label="5" />
+        <CalculatorButtons label="6" />
+        <CalculatorButtons label="-" color={colors.orange} />
+      </View>
+      <View style={styles.row}>
+        <CalculatorButtons label="1" />
+        <CalculatorButtons label="2" />
+        <CalculatorButtons label="3" />
+        <CalculatorButtons label="+" color={colors.orange} />
+      </View>
+      <View style={styles.row}>
+        <CalculatorButtons label="0" doubleSize />
+        <CalculatorButtons label="." />
+        <CalculatorButtons label="=" color={colors.orange} />
       </View>
     </View>
   );
