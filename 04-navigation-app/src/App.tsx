@@ -1,12 +1,13 @@
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { HomeScreen } from './presentation/screens/home/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
 
 export const App = () => {
   return (
-    <View>
+    <NavigationContainer>
       <Text>
         <HomeScreen />
       </Text>
-    </View>
+    </NavigationContainer>
   );
 };
