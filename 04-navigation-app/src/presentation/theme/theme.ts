@@ -12,7 +12,7 @@ export const globalColors = {
   background: '#fff',
 };
 
-export const globalSyles = StyleSheet.create({
+export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,

@@ -1,5 +1,5 @@
 import { Pressable, Text } from 'react-native';
-import { globalSyles } from '../../theme/theme';
+import { globalStyles } from '../../theme/theme';
 
 interface Props {
   onPress: () => void;
@@ -8,8 +8,8 @@ interface Props {
 
 export const PrimaryButton = ({ onPress, label }: Props) => {
   return (
-    <Pressable onPress={() => onPress()} style={globalSyles.primaryButton}>
-      <Text style={globalSyles.buttonText}>{label}</Text>
+    <Pressable onPress={() => onPress()} style={globalStyles.primaryButton}>
+      <Text style={globalStyles.buttonText}>{label}</Text>
     </Pressable>
   );
 };
