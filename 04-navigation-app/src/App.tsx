@@ -1,13 +1,10 @@
-import { Text } from 'react-native';
-import { HomeScreen } from './presentation/screens/home/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
+import { StackNavigator } from './presentation/routes/StackNavigator';
 
 export const App = () => {
   return (
     <NavigationContainer>
-      <Text>
-        <HomeScreen />
-      </Text>
+      <StackNavigator />
     </NavigationContainer>
   );
 };
