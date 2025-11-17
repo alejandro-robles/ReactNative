@@ -4,7 +4,7 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
 } from '@react-navigation/drawer';
-import { StackNavigator } from './StackNavigator';
+
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { globalColors } from '../theme/theme';
 import { useWindowDimensions, View } from 'react-native';
