@@ -1,31 +1,28 @@
-import { Pressable, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { globalStyles } from '../../theme/theme';
-import {
-  DrawerActions,
-  type NavigationProp,
-  useNavigation,
-} from '@react-navigation/native';
+import { type NavigationProp, useNavigation } from '@react-navigation/native';
 import { PrimaryButton } from '../../components/shared/PrimaryButton';
 import { type RootStackParams } from '../../routes/StackNavigator';
-import { useEffect } from 'react';
+import { HamburgerMenu } from '../tabs/HamburgerMenu';
 
 export const HomeScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
-  useEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <Pressable
-          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer)}
-        >
-          <Text> Menu </Text>
-        </Pressable>
-      ),
-    });
-  });
+  // useEffect(() => {
+  //   navigation.setOptions({
+  //     headerLeft: () => (
+  //       <Pressable
+  //         onPress={() => navigation.dispatch(DrawerActions.toggleDrawer)}
+  //       >
+  //         <Text> Menu </Text>
+  //       </Pressable>
+  //     ),
+  //   });
+  // });
 
   return (
     <View style={globalStyles.container}>
+      <HamburgerMenu />
       {/* <Pressable
         onPress={() => navigation.navigate('Products' as never)}
         style={globalSyles.primaryButton}
