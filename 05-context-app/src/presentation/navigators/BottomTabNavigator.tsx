@@ -10,7 +10,7 @@ export const BottomTabNavigator = () => {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Title" component={SettingsScreen} />
     </Tab.Navigator>
   );
 };
