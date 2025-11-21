@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { Movie } from '../../../core/entities/movie.entity';
 import { ScrollView } from 'react-native-gesture-handler';
-import { MoviePoster } from './MoviewPoster';
+import { MoviePoster } from './MoviePoster';
 
 interface Props {
   movies: Movie[];
