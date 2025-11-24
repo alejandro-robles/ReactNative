@@ -21,9 +21,7 @@ export const useMovie = (movieId: number) => {
     setMovie(fullMovie);
     setIsLoading(false);
 
-    console.log('♥️♥️♥️♥️♥️♥️');
     console.log({ fullMovie });
-    console.log('♥️♥️♥️♥️♥️♥️');
   };
 
   return {
