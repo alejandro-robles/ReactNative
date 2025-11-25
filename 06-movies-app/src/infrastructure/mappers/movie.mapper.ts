@@ -3,7 +3,7 @@ import type { Result } from '../interfaces/movie-db.responses';
 import { MovieDBMovie } from '../interfaces/movie-db.responses';
 
 export class MovieMapper {
-  static fromMovieDBResultTonEntity(result: Result): Movie {
+  static fromMovieDBResultToEntity(result: Result): Movie {
     return {
       id: result.id,
       title: result.title,
@@ -14,6 +14,7 @@ export class MovieMapper {
       backdrop: `https://image.tmdb.org/t/p/w500${result.backdrop_path}`,
     };
   }
+
   static fromMovieDBToEntity(movie: MovieDBMovie): FullMovie {
     return {
       id: movie.id,

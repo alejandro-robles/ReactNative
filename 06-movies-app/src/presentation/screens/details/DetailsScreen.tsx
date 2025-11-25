@@ -1,4 +1,4 @@
-import { ScrollView, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 import { RootStackParams } from '../../navigation/Navigation';
 import { StackScreenProps } from '@react-navigation/stack';
 import { useMovie } from '../../hooks/useMovie';

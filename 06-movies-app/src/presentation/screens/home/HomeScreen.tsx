@@ -8,7 +8,14 @@ import { FullScreenLoader } from '../../../infrastructure/loaders/FullScreenLoad
 
 export const HomeScreen = () => {
   const { top } = useSafeAreaInsets();
-  const { isLoading, nowPlaying, popular, topRated, upcoming } = useMovies();
+  const {
+    isLoading,
+    nowPlaying,
+    popular,
+    topRated,
+    upcoming,
+    popularNextPage,
+  } = useMovies();
 
   if (isLoading) {
     return <FullScreenLoader />;
@@ -18,7 +25,11 @@ export const HomeScreen = () => {
     <ScrollView>
       <View style={{ marginTop: top + 20, paddingBottom: 30 }}>
         <PosterCarousel movies={nowPlaying} />
-        <HorizontalCarousel movies={popular} title="Populares" />
+        <HorizontalCarousel
+          movies={popular}
+          title="Populares"
+          loadNextPage={popularNextPage}
+        />
         <HorizontalCarousel movies={topRated} title="Mejor calificadas" />
         <HorizontalCarousel movies={upcoming} title="Próximamente" />
       </View>

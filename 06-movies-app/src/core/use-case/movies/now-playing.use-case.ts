@@ -9,9 +9,7 @@ export const moviesNowPlayingUseCase = async (
   try {
     const nowPlaying = await fetcher.get<NowPlayingResponse>('/now_playing');
 
-    return nowPlaying.results.map(result =>
-      MovieMapper.fromMovieDBResultTonEntity(result),
-    );
+    return nowPlaying.results.map(MovieMapper.fromMovieDBResultToEntity);
   } catch (error) {
     console.log(error);
     throw new Error('Error fetching movies - NowPlaying');
