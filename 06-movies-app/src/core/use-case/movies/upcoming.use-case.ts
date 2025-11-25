@@ -9,9 +9,7 @@ export const moviesUpcomingUseCase = async (
   try {
     const upcoming = await fetcher.get<MovieDBMoviesResponse>('/upcoming');
 
-    return upcoming.results.map(result =>
-      MovieMapper.fromMovieDBResultTonEntity(result),
-    );
+    return upcoming.results.map(MovieMapper.fromMovieDBResultToEntity);
   } catch (error) {
     console.log(error);
     throw new Error('Error fetching movies - UpcomingUseCase');

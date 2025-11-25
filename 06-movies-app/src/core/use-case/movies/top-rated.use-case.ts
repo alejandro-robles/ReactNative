@@ -9,9 +9,7 @@ export const moviesTopRatedUseCase = async (
   try {
     const topRated = await fetcher.get<MovieDBMoviesResponse>('/top_rated');
 
-    return topRated.results.map(result =>
-      MovieMapper.fromMovieDBResultTonEntity(result),
-    );
+    return topRated.results.map(MovieMapper.fromMovieDBResultToEntity);
   } catch (error) {
     console.log(error);
     throw new Error('Error fetching movies - TopRatedUseCase');
