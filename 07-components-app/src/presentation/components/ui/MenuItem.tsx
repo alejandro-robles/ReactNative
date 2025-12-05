@@ -3,6 +3,7 @@ import { colors } from '../../../config/theme/theme';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import { Text } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import { Separator } from './Separator';
 
 interface Props {
   name: string;
@@ -23,37 +24,40 @@ export const MenuItem = ({
   const navigation = useNavigation<any>();
 
   return (
-    <Pressable onPress={() => navigation.navigate(component)}>
-      <View
-        style={{
-          ...styles.container,
-          backgroundColor: colors.cardBackground,
-          ...(isFirst && {
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
-            paddingTop: 10,
-          }),
-          ...(isLast && {
-            borderBottomLeftRadius: 10,
-            borderBottomRightRadius: 10,
-            paddingBottom: 10,
-          }),
-        }}
-      >
-        <Ionicons
-          name={icon}
-          size={25}
-          style={{ marginRight: 10 }}
-          color={colors.primary}
-        />
-        <Text style={{ color: colors.text }}>{name}</Text>
-        <Ionicons
-          name="chevron-forward-outline"
-          size={25}
-          style={{ marginLeft: 'auto', color: colors.primary }}
-        />
-      </View>
-    </Pressable>
+    <>
+      <Pressable onPress={() => navigation.navigate(component)}>
+        <View
+          style={{
+            ...styles.container,
+            backgroundColor: colors.cardBackground,
+            ...(isFirst && {
+              borderTopLeftRadius: 10,
+              borderTopRightRadius: 10,
+              paddingTop: 10,
+            }),
+            ...(isLast && {
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+              paddingBottom: 10,
+            }),
+          }}
+        >
+          <Ionicons
+            name={icon}
+            size={25}
+            style={{ marginRight: 10 }}
+            color={colors.primary}
+          />
+          <Text style={{ color: colors.text }}>{name}</Text>
+          <Ionicons
+            name="chevron-forward-outline"
+            size={25}
+            style={{ marginLeft: 'auto', color: colors.primary }}
+          />
+        </View>
+      </Pressable>
+      {!isLast && <Separator />}
+    </>
   );
 };
 
