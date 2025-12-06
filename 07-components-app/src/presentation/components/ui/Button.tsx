@@ -14,12 +14,13 @@ export const Button = ({ text, styles, onPress }: Props) => {
       style={({ pressed }) => [
         globalStyles.btnPrimary,
         { opacity: pressed ? 0.8 : 1, backgroundColor: colors.primary },
+        styles,
       ]}
     >
       <Text
         style={[globalStyles.btnPrimaryText, { color: colors.buttonTextColor }]}
       >
-        Button
+        {text}
       </Text>
     </Pressable>
   );
