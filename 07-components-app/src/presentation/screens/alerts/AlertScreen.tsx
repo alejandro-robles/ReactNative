@@ -39,6 +39,17 @@ export const AlertScreen = () => {
       },
     );
 
+  const showPrompt = () => {
+    Alert.prompt(
+      'Enter password',
+      'Enter your password to claim your $1.5B in lottery winnings',
+      (valor: string) => console.log('password: ', valor),
+      'secure-text',
+      'Im the default value',
+      'number-pad',
+    );
+  };
+
   return (
     <CustomView style={globalStyles.globalMargin}>
       <Title safe text="Alertas" />
@@ -46,7 +57,7 @@ export const AlertScreen = () => {
       <View style={{ height: 10 }} />
       <Button text="Alerta - 3 Botones" onPress={createThreeButtonAlert} />
       <View style={{ height: 10 }} />
-      <Button text="Prompt - Input" onPress={() => {}} />
+      <Button text="Prompt - Input" onPress={showPrompt} />
     </CustomView>
   );
 };
