@@ -3,6 +3,7 @@ import { globalStyles } from '../../../config/theme/theme';
 import { Button } from '../../components/ui/Button';
 import { CustomView } from '../../components/ui/CustomView';
 import { Title } from '../../components/ui/Title';
+import { showPrompt } from '../../../config/adapters/prompt.adapter';
 
 export const AlertScreen = () => {
   const createTwoButtonAlert = () =>
@@ -39,15 +40,33 @@ export const AlertScreen = () => {
       },
     );
 
-  const showPrompt = () => {
-    Alert.prompt(
-      'Enter password',
-      'Enter your password to claim your $1.5B in lottery winnings',
-      (valor: string) => console.log('password: ', valor),
-      'secure-text',
-      'Im the default value',
-      'number-pad',
-    );
+  const onShowPrompt = () => {
+    showPrompt({
+      title: 'Enter password',
+      subtitle: 'Enter your password to claim your $1.5B in lottery winnings',
+      promptType: 'secure-text',
+      defaultValue: 'Im the default value',
+      buttons: [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'destructive',
+        },
+        {
+          text: 'OK',
+          onPress: () => console.log('OK Pressed'),
+        },
+      ],
+      placeholder: 'password',
+    });
+    // Alert.prompt(
+    //   'Enter password',
+    //   'Enter your password to claim your $1.5B in lottery winnings',
+    //   (valor: string) => console.log('password: ', valor),
+    //   'secure-text',
+    //   'Im the default value',
+    //   'number-pad',
+    // );
   };
 
   return (
@@ -57,7 +76,7 @@ export const AlertScreen = () => {
       <View style={{ height: 10 }} />
       <Button text="Alerta - 3 Botones" onPress={createThreeButtonAlert} />
       <View style={{ height: 10 }} />
-      <Button text="Prompt - Input" onPress={showPrompt} />
+      <Button text="Prompt - Input" onPress={onShowPrompt} />
     </CustomView>
   );
 };
