@@ -1,4 +1,3 @@
-import { use } from 'react';
 import { colors, globalStyles } from '../../../config/theme/theme';
 import { Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
