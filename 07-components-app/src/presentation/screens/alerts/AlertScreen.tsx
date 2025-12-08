@@ -43,7 +43,7 @@ export const AlertScreen = () => {
   const onShowPrompt = () => {
     showPrompt({
       title: 'Enter password',
-      subtitle: 'Enter your password to claim your $1.5B in lottery winnings',
+      subtitle: 'Enter your password *****',
       promptType: 'secure-text',
       defaultValue: 'Im the default value',
       buttons: [
