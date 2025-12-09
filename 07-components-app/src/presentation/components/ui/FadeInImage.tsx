@@ -1,5 +1,10 @@
-import { ActivityIndicator, Animated, ImageStyle, View } from 'react-native';
-import { StyleProp } from 'react-native/types_generated/index';
+import {
+  ActivityIndicator,
+  Animated,
+  ImageStyle,
+  StyleProp,
+  View,
+} from 'react-native';
 import { useAnimation } from '../../hooks/useAnimation';
 import { useState } from 'react';
 
