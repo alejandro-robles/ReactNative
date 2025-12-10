@@ -5,9 +5,6 @@ import { useState } from 'react';
 import { Separator } from '../../components/ui/Separator';
 
 export const SwitchScreen = () => {
-  // const [isEnabled, setIsEnabled] = useState(false);
-  // const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-
   const [state, setState] = useState({
     isActive: true,
     isHungry: false,
