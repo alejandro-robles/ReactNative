@@ -1,20 +1,37 @@
-import { NavigationContainer } from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
 import { Navigator } from './presentation/navigator/Navigator';
-import { ThemeProvider } from './presentation/context/ThemeContext';
-import { PropsWithChildren } from 'react';
+import {
+  ThemeContext,
+  ThemeProvider,
+} from './presentation/context/ThemeContext';
+import { PropsWithChildren, useContext } from 'react';
 
-const AppState = ({ children }: PropsWithChildren) => {
+const AppNavigation = ({ children }: PropsWithChildren) => {
+  const { isDark } = useContext(ThemeContext);
+
   return (
-    <NavigationContainer>
-      <ThemeProvider>{children}</ThemeProvider>
+    <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
+      {children}
     </NavigationContainer>
+  );
+};
+
+const AppTheme = ({ children }: PropsWithChildren) => {
+  return (
+    <ThemeProvider>
+      <AppNavigation>{children}</AppNavigation>
+    </ThemeProvider>
   );
 };
 
 export const ComponentsApp = () => {
   return (
-    <AppState>
+    <AppTheme>
       <Navigator />
-    </AppState>
+    </AppTheme>
   );
 };
